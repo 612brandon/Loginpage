@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Sign Up</title>
-    <!-- Link to external CSS file -->
+    <title>Portal Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <!-- LOGIN FORM -->
-        <div id="loginForm">
-            <h2>Welcome Back</h2>
+        <!-- 1. ROLE SELECTION SCREEN -->
+        <div id="roleSelection">
+            <h2>Select Your Portal</h2>
+            <p class="subtitle">Please choose your role to continue</p>
+            <div class="role-options">
+                <button class="role-btn" data-role="teacher">
+                    <span class="role-icon">🧑‍🏫</span>
+                    Teacher Portal
+                </button>
+                <button class="role-btn" data-role="student">
+                    <span class="role-icon">🎒</span>
+                    Student Portal
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. LOGIN FORM (Hidden by default) -->
+        <div id="loginForm" class="hidden">
+            <button class="back-btn" id="backToRoles">← Back</button>
+            <h2 id="loginTitle">Welcome Back</h2>
             <form action="/login-endpoint" method="POST">
+                <!-- Hidden field to pass selected role to backend -->
+                <input type="hidden" id="loginRole" name="role" value="">
+                
                 <div class="form-group">
                     <label for="loginEmail">Email Address</label>
-                    <input type="email" id="loginEmail" name="email" required placeholder="name@example.com">
+                    <input type="email" id="loginEmail" name="email" required placeholder="name@school.edu">
                 </div>
                 <div class="form-group">
                     <label for="loginPassword">Password</label>
@@ -27,23 +46,26 @@
             </form>
             
             <div class="social-login">
-                <button class="social-btn">Continue with Google</button>
+                <button class="social-btn">Continue with School Account</button>
             </div>
 
-            <p class="toggle-text">Don't have an account? <a href="#" id="toSignup">Sign Up</a></p>
+            <p class="toggle-text">Need an account? <a href="#" id="toSignup">Sign Up</a></p>
         </div>
 
-        <!-- SIGN UP FORM -->
+        <!-- 3. SIGN UP FORM (Hidden by default) -->
         <div id="signupForm" class="hidden">
-            <h2>Create Account</h2>
+            <h2 id="signupTitle">Create Account</h2>
             <form action="/signup-endpoint" method="POST">
+                <!-- Hidden field to pass selected role to backend -->
+                <input type="hidden" id="signupRole" name="role" value="">
+
                 <div class="form-group">
                     <label for="signupName">Full Name</label>
                     <input type="text" id="signupName" name="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
                     <label for="signupEmail">Email Address</label>
-                    <input type="email" id="signupEmail" name="email" required placeholder="name@example.com">
+                    <input type="email" id="signupEmail" name="email" required placeholder="name@school.edu">
                 </div>
                 <div class="form-group">
                     <label for="signupPassword">Password</label>
@@ -56,8 +78,10 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
+</body>
+</html>
     <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
-
