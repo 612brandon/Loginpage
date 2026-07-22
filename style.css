@@ -180,3 +180,23 @@ input:focus {
 </body>
 </html>
 }
+    /* Password Error Text Layout Styling */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Ensure hidden errors don't use vertical layout space */
+.error-message.hidden {
+    display: none !important;
+}
+
+/* Visual cue to tint the input border red during validation errors */
+input.input-error {
+    border-color: #e74c3c !important;
+    background-color: #fffbfb;
+}
+    
