@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <!-- 1. ROLE SELECTION SCREEN -->
+        <!-- ROLE SELECTION SCREEN -->
         <div id="roleSelection">
             <h2>Select Your Portal</h2>
             <p class="subtitle">Please choose your role to continue</p>
@@ -25,12 +25,12 @@
             </div>
         </div>
 
-        <!-- 2. LOGIN FORM (Hidden by default) -->
+        <!-- LOGIN FORM -->
         <div id="loginForm" class="hidden">
             <button class="back-btn" id="backToRoles">← Back</button>
             <h2 id="loginTitle">Welcome Back</h2>
             <form action="/login-endpoint" method="POST">
-                <!-- Hidden field to pass selected role to backend -->
+                <!-- Hidden -->
                 <input type="hidden" id="loginRole" name="role" value="">
                 
                 <div class="form-group">
@@ -52,7 +52,7 @@
             <p class="toggle-text">Need an account? <a href="#" id="toSignup">Sign Up</a></p>
         </div>
 
-        <!-- 3. SIGN UP FORM (Hidden by default) -->
+        <!-- SIGN UP FORM -->
         <div id="signupForm" class="hidden">
             <h2 id="signupTitle">Create Account</h2>
             <form action="/signup-endpoint" method="POST">
