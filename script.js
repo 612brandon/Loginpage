@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Target Application Configuration
     const TARGET_WEBSITE = "https://612brandon.github.io/Messaging.github.io/";
 
     // Interface Screens
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginRoleInput = document.getElementById('loginRole');
     const signupRoleInput = document.getElementById('signupRole');
 
-    // 1. Handle Initial Role Selection ("Teacher" or "Student")
+    // Handle Initial Role Selection
     roleButtons.forEach(button => {
         button.addEventListener('click', () => {
             const role = button.getAttribute('data-role');
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         roleSelection.classList.remove('hidden');
     });
 
-    // 3. Coordinate Portal View Panel Toggling
+    // Coordinate Portal View Panel Toggling
     toSignup.addEventListener('click', (e) => {
         e.preventDefault();
         loginForm.classList.add('hidden');
@@ -59,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.classList.remove('hidden');
     });
 
-    // 4. Handle Redirection Routine Post Authentication Form Events
+    // Handle Redirection Routine Post Authentication Form Events
     const handleAuthRedirect = (e) => {
         e.preventDefault(); // Halt active form reloads
         
